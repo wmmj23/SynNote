@@ -5,9 +5,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 
 <%@ page import='com.warmmer.SynNote' %>
+<%@ page import='org.springframework.context.ApplicationContext' %>
+<%@ page import='org.springframework.context.support.ClassPathXmlApplicationContext' %>
 
 <%
-	com.warmmer.SynNote.p();
+	System.out.println(System.getProperty("user.dir"));
+	ApplicationContext context =
+    	new ClassPathXmlApplicationContext(new String[] {"Spring_config.xml"});
+	SynNote sn = (SynNote)context.getBean("synNote");
+	sn.p();
 %>
 
 
