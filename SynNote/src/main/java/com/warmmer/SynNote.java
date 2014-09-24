@@ -11,8 +11,11 @@ public class SynNote {
 	public void setJavaBean(JavaBean javaBean) {
 		this.javaBean = javaBean;
 	}
+	
+	public SynNote(){
+	}
 
-	public void p(){
-		System.out.println("this is test! "+javaBean.a);
+	public String p(){
+		return "this is test! "+javaBean.a;
 	}
 }
